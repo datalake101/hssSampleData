@@ -1,0 +1,115 @@
+
+- age: age of the respondent (years)
+- sex: respondent's sex (Male/Female/Non-binary)
+- ethnicity: respondent's ethnic group
+- marital_status: current marital status
+- num_children: number of children in the household
+- household_size: total number of household members
+- region: type of region where respondent lives (Urban/Suburban/Rural/Remote)
+- main_language: main language spoken at home
+- foreign_born: whether respondent was born outside the country (Yes/No)
+- years_in_country: number of years living in the country
+- religion: religious affiliation of respondent
+- citizenship: citizenship or immigration status
+- education: highest level of education completed
+- employment: employment status
+- occupation: main occupation category
+- monthly_income: monthly income of respondent
+- subjective_income: perceived adequacy of income
+- housing_type: type of housing respondent lives in
+- owns_home: owns home or not (Yes/No)
+- rent_amount: monthly rent amount (if renting)
+- years_at_residence: years living at current residence
+- food_insecurity: reported food insecurity (Yes/No)
+- energy_insecurity: reported energy insecurity (Yes/No)
+- internet_access: internet access at home (Yes/No)
+- own_vehicle: owns a vehicle (Yes/No)
+- financial_literacy: self-rated financial literacy level
+- budget_regularly: regularly budget finances (Yes/No)
+- receive_government_support: receive government financial support (Yes/No)
+- bmi: body mass index (kg/m²)
+- self_rated_health: self-rated general health (Poor to Excellent)
+- chronic_illness: presence of chronic illness (Yes/No)
+- pain_level: pain severity (scale 0-10)
+- disability: type of disability if any
+- diabetes: diabetes diagnosis (Yes/No)
+- asthma: asthma diagnosis (Yes/No)
+- hypertension: hypertension diagnosis (Yes/No)
+- allergies: type of allergies if any
+- freq_hospital: number of hospital visits in last year
+- freq_GP_visit: number of general practitioner visits last year
+- smoker: smoking status (Current/Former/Never)
+- alcohol_use: alcohol use frequency
+- fruit_veg_day: number of fruit/vegetable servings per day
+- close_friends: number of close friends
+- family_support: level of family support
+- confide_in_anyone: can confide personal matters (Yes/No)
+- feel_belonging: feeling of belonging to community
+- trust_neighbors: trust in neighbors
+- trust_local_govt: trust in local government
+- trust_politicians: trust in politicians
+- trust_scientists: trust in scientists
+- trust_social_media: trust in social media
+- social_club_member: member of social clubs (Yes/No)
+- religious_org_member: member of religious organizations (Yes/No)
+- neighbourhood_events: attendance frequency at neighborhood events
+- volunteer: volunteering status (Yes/No)
+- help_neighbors: frequency of helping neighbors
+- neighborhood_safety: perceived safety of neighborhood
+- uses_social_media: uses any social media (Yes/No)
+- facebook_use: uses Facebook (Yes/No)
+- fb_daily_minutes: daily Facebook usage minutes
+- youtube_use: uses YouTube (Yes/No)
+- yt_daily_minutes: daily YouTube usage minutes
+- twitter_use: uses Twitter (Yes/No)
+- insta_use: uses Instagram (Yes/No)
+- snapchat_use: uses Snapchat (Yes/No)
+- tik_tok_use: uses TikTok (Yes/No)
+- heard_climate_sm: heard about climate change on social media (Yes/No)
+- climate_posts_interact: frequency of interacting with climate posts on social media
+- climate_action_discussion: frequency of discussing climate action
+- shares_climate_content: frequency of sharing climate-related content
+- climate_change_is_real: belief if climate change is real (Yes/No/Not sure)
+- climate_change_worry: level of worry about climate change
+- climate_change_personal_action: takes personal action regarding climate change (Yes/No)
+- climate_friendly_choices: makes climate-friendly choices (Yes/No)
+- recycled_last_week: recycled materials last week (Yes/No)
+- reduced_meat: reduced meat consumption (Yes/No)
+- supported_policy_petition: supported climate policy petition (Yes/No)
+- storm_experience: experienced storm events (Yes/No)
+- heatwave_experience: experienced heatwave events (Yes/No)
+- happiness_today: current happiness level (scale 1-10)
+- stress_level: perceived stress level
+- anxiety_level: anxiety severity
+- depression_level: depression severity
+- sleep_quality: quality of sleep
+- loneliness_freq: frequency of loneliness feelings
+- suicidal_thoughts_ever: ever had suicidal thoughts (Yes/No)
+- recent_therapy: received therapy recently (Yes/No)
+- mindfulness_practice: frequency of mindfulness practice
+- positive_affect_scale: level of positive emotions
+- negative_affect_scale: level of negative emotions
+- optimism_scale: level of optimism
+- gratitude_scale: level of gratitude
+- self_esteem_level: level of self-esteem
+- sense_of_purpose: feeling of life’s purpose
+- flow_state_freq: frequency of flow (engaged) states
+- cholesterol_total: total cholesterol level (mg/dL)
+- cholesterol_hdl: HDL cholesterol level (mg/dL)
+- cholesterol_ldl: LDL cholesterol level (mg/dL)
+- triglycerides: triglycerides level (mg/dL)
+- fasting_blood_sugar: fasting blood sugar level (mg/dL)
+- resting_heart_rate: resting heart beats per minute
+- oxygen_saturation: blood oxygen saturation (%)
+- waist_circumference: waist circumference (cm)
+- hip_circumference: hip circumference (cm)
+- grip_strength: hand grip strength (kg force)
+- air_quality_index: level of air pollution at residence (AQI)
+- noise_exposure_db: average noise exposure (decibels)
+- daily_sunlight_hours: average daily sunlight exposure (hours)
+- walkability_index: neighborhood walkability score
+- green_space_percentage: percent of green space nearby
+- water_quality_index: water quality score
+- household_temp_avg: average home indoor temperature (°C)
+- home_humidity_avg: average indoor humidity (%)
+- pesticide_exposure_level: relative level of pesticide exposure 
