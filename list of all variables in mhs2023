@@ -1,0 +1,59 @@
+Variable Name       Variable Label                          
+---------------     ----------------                        
+age_curr            Respondent's current age                
+age_grp5            Age in 5-year groups                    
+region              Region                                  
+residence_type      Type of place of residence              
+v101                Region                                  
+edu_level           Highest educational level               
+elec                Household has: electricity              
+fridge              Household has: refrigerator             
+ethnicity           Ethnicity                               
+edu_years           Education in single years               
+hh_members          Number of household members (listed)    
+tv_freq             Frequency of watching television        
+mobile              Owns a mobile telephone                 
+internet_use        Use of internet                         
+internet_freq       Frequency of using internet last month  
+health_status       Self reported health status             
+wealth_idx          Wealth index for urban/rural            
+age_first_birth     Age of respondent at 1st birth          
+children_living     Number of living children               
+marry_first_birth   Marriage to first birth interval (months)
+pregnancy_loss      Pregnancy losses                        
+age_menstruation    Age at first menstrual period           
+wanted_last_child   Wanted last child                       
+visited_field       Visited by fieldworker in last 12 months
+visited_health_fac  Visited health facility last 12 months  
+csec                Delivery by caesarean section           
+bw_kg               Birth weight in kilograms (3 decimals)  
+malaria_med         During pregnancy took: SP/fansidar for malaria
+parasites_med       Drugs for intestinal parasites during pregnancy
+bmi                 Body Mass Index                         
+anemia_level        Anemia level                            
+smokes              Smokes cigarettes                       
+smoke_freq          Frequency smokes cigarettes             
+alc_days_month      Number of days respondent drank alcoholic drinks in the past month
+alc_per_day         Number of alcoholic drinks per day      
+age_first_sex       Age at first sex (imputed)              
+contraception_decisionDecision maker for using contraception  
+husband_age         Husband/partner's age                   
+money_decision      Person who usually decides on: what to do with money husband earns
+land_own            Owns land alone or jointly              
+hiv_prevent         Drugs to avoid HIV transmission to baby during pregnancy
+lifetime_partners   Total lifetime number of sex partners   
+hiv_tests           Number of HIV tests                     
+circumcise_age      Age at circumcision (in years)          
+hbp                 Ever been told that you have high blood pressure or hypertension
+h_sugar             Ever been told that you have high blood sugar or diabetes
+heart_dis           Ever been told by a doctor or other healthcare worker that you have heart diseas
+lung_dis            Ever been told by a doctor or other healthcare worker that you have lung disease
+depression          Ever been told by a doctor or other healthcare worker that you have depression
+arthritis           Ever been told by a doctor or other healthcare worker that you have arthritis
+region_s            Region                                  
+high_intensity_phys Involves high-intensity physical activities
+phys_days           Number of days per week                 
+moderate_phys       Work involves moderate-intensity physical activities
+breathing_exercise  Practice of sports that increase breathing
+breathing_days      Number of days per week                 
+covid_vax           Have you already received a COVID-19 vaccine?
