@@ -1,0 +1,85 @@
+---
+title: "Relationship between lifestyle behavious and arthritis among women aged 15 years and above in Mali: a cross-sectional study"
+author: "FSS 2025"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+#setup the environment
+```{r, include=FALSE, echo=FALSE}
+# load necessary libraries
+#install.packages("pacman")
+library(pacman)
+pacman::p_load(kableExtra,rio, labelled, dplyr, NHANES, gtsummary, MASS, ggplot2, car, patchwork, forcats)
+```
+
+
+#set up data
+```{r, echo=FALSE}
+library(haven)
+df= import("https://raw.githubusercontent.com/datalake101/hssSampleData/refs/heads/main/mhs2023.csv") %>%
+  mutate(across(where(is.character), as.factor))
+
+```
+
+Abstract: This cross-sectional study aimed to explore the relationship between lifestyle behaviors and arthritis among Malian women aged 15 and older. Data were analysed using descriptive and binary logistic regression methods. Results indicated that older age, being in a poorer or wealthier quintile, mobile phone ownership, and performing breathing exercises were associated with higher odds of having arthritis.
+
+
+
+## Table 1: Description of study variables:
+
+```{r, echo=FALSE}
+data = df %>% 
+  dplyr::select(50, 2,4,6,13,14,17,32,55)
+
+look_for(data) %>%
+  dplyr::select(variable, levels) %>%
+  kable()
+```
+
+## Table 2: Descriptive statistics
+```{r,echo = FALSE,message = FALSE,  warning = FALSE}
+ 
+  tbl_summary(
+    data,
+    include = c("age_grp5", "residence_type", "edu_level", "wealth_idx", "mobile", 
+"internet_use", "smokes", "breathing_exercise"),
+    by = arthritis, 
+    percent = "column",
+    missing = "no",
+    digits = all_categorical() ~ 2) |> 
+  add_n() |>  
+  add_p() |> 
+  modify_header(label = "**Variable**") |> 
+  bold_labels()
+```
+
+Table 2 shows that a greater percentage of women with arthritis are aged 50-54 (20.50%) and 60-64 (13.43%) compared to women without arthritis.
+
+ A higher percentage of women with arthritis have no education (71.03%) compared to women without arthritis (60.95%), while women with primary or secondary education have slightly lower percentages of arthritis. 
+
+ Women from poorer (20.26%) and the poorest households (17.66%) have higher percentages of arthritis compared to women from middle (18.39%) and richer (25.55%) households. 
+
+ A higher percentage of women with arthritis use mobile phones (66.07%) than those without (61.46%). 
+
+ lastly, a higher percentage of women with arthritis smoke (48.09%) compared to women without arthritis (13.39%). 
+
+ Fewer women with arthritis engage in breathing exercises (2.03%) compared to women without arthritis (3.06%).
+
+
+
+## Table  3: Binary regression analysis 
+
+```{r,  message = FALSE, echo = FALSE, warning = FALSE}
+  data %>% 
+  glm(arthritis ~ age_grp5 +residence_type +edu_level + wealth_idx + mobile +internet_use + smokes + breathing_exercise, 
+      family = binomial, 
+      data = .) %>% 
+  gtsummary::tbl_regression(exponentiate = T)
+ 
+```
+
+
+As shown in Table 3, the odds of having arthritis significantly increased with age. For instance, women aged 45-49 had 12.1 times the odds of arthritis compared to the youngest group of women aged 15-19 (OR=12.1, 95% CI: 8.40–17.7).
+Compared to women from middle-income households, those from poorer (OR=1.29, 95% CI: 1.07–1.57), richer (OR=1.31, 95% CI: 1.09–1.57), and richest households (OR=1.30, 95% CI: 1.05–1.60) had significantly higher odds of having arthritis.
+Women who use mobile phones had 1.20 times higher odds of arthritis compared to non-users (OR=1.20, 95% CI: 1.04–1.39). Not smoking was associated with significantly lower odds of arthritis (OR=0.33, 95% CI: 0.20–0.59). Additionally, women who engage in breathing exercises had 1.67 times the odds of arthritis compared to those who do not (OR=1.67, 95% CI: 1.05–2.55).
