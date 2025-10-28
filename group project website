@@ -1,1 +1,687 @@
 
+---
+title: "Our Health Sciences Journey"
+subtitle: "A Collaborative Story of Five Students 🎓"
+author: |
+  | Sakura Tanaka 🌸 | Amara Okafor 🌟 | Diego Martinez ⚡
+  | Mei Lin Chen 🦋 | Siriporn Patel 🌙
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    code_folding: show
+    toc_depth: 3
+    number_sections: true
+    fig_width: 8
+    fig_height: 5
+    fig_caption: true
+    df_print: paged
+    self_contained: true
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    use_bookdown: true
+---
+
+```{r setup, include=FALSE}
+# Load required libraries
+library(knitr)
+library(rmdformats)
+library(tidyverse)
+library(DT)
+library(plotly)
+library(kableExtra)
+
+# Global chunk options
+opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  cache = FALSE,
+  comment = NA
+)
+
+set.seed(2024)
+```
+
+```{css, echo=FALSE}
+/* Joyful and vibrant color scheme */
+.title {
+  color: #FF6B9D;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+}
+
+.subtitle {
+  color: #FFA07A;
+  font-weight: 400;
+}
+
+h1 {
+  color: #FF6B9D;
+  border-bottom: 4px solid #FFD93D;
+  padding-bottom: 12px;
+  text-shadow: 1px 1px 2px rgba(255, 107, 157, 0.1);
+}
+
+h2 {
+  color: #FF8C42;
+  margin-top: 30px;
+}
+
+h3 {
+  color: #FFA07A;
+}
+
+#sidebar h2 {
+  background-color: #FF6B9D !important;
+}
+
+#sidebar .list-group-item.active {
+  background-color: #FFB6C1 !important;
+  border-color: #FF6B9D !important;
+}
+
+#sidebar .list-group-item.active:hover {
+  background-color: #FF8FAB !important;
+}
+
+#sidebar .list-group-item:hover {
+  background-color: #FFF5E6 !important;
+}
+
+.friend-card {
+  background: linear-gradient(135deg, #FFF5E6 0%, #FFE4E1 100%);
+  border-left: 5px solid #FFD93D;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(255, 107, 157, 0.2);
+}
+
+.story-box {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFF0F5 100%);
+  border: 3px solid #FFD93D;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(255, 107, 157, 0.15);
+}
+
+blockquote {
+  border-left: 5px solid #FF6B9D;
+  background: #FFF5E6;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  font-style: italic;
+  color: #FF6B9D;
+}
+```
+
+![Header Image](https://images.unsplash.com/photo-1742853288135-5eda9c95af9c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2350){width=100%}
+
+# 💕 Our Story: How We Formed Our Study Group
+
+> *"We began as incoming students in Fall 2021, seated in the back row of Introduction to Health Sciences. A simple request to borrow a pen evolved into collaborative study sessions, shared academic goals, and professional relationships that have supported us throughout our program."*
+
+<div class="story-box">
+
+## 🌟 The Beginning
+
+It started during orientation week in September 2021. Sakura needed course materials, Amara had extra supplies, Diego located the student resources, Mei Lin organized study schedules for the group, and Siriporn initiated our first group discussion. By the end of the first week, we had established a study group and committed to supporting each other's academic success.
+
+**Our Commitment:** *Collaborative learning and mutual academic support throughout our program.*
+
+</div>
+
+## 🎯 Our Professional Goals and Motivations
+
+```{r passions}
+passions <- data.frame(
+  Student = c("Sakura Tanaka", "Amara Okafor", "Diego Martinez", "Mei Lin Chen", "Siriporn Patel"),
+  Career_Goal = c(
+    "Pediatric Nurse - Providing compassionate care to young patients 👶",
+    "Global Health Professional - Addressing health disparities internationally 🌍",
+    "Emergency Medicine - Delivering critical care services 🚑",
+    "Medical Research - Contributing to scientific advancement 🔬",
+    "Community Health Specialist - Improving healthcare access 🏘️"
+  ),
+  Motivation = c(
+    "Inspired by the need for quality pediatric healthcare in underserved areas",
+    "Observed healthcare inequities in my community and internationally",
+    "Witnessed the impact of emergency medical services firsthand",
+    "Driven by the potential of scientific research to improve health outcomes",
+    "Committed to reducing healthcare disparities in diverse communities"
+  ),
+  Daily_Inspiration = c(
+    "Clinical case studies 💖",
+    "Global health statistics 🗺️",
+    "Emergency response protocols 🎖️",
+    "Research literature 🔬",
+    "Community health initiatives 🌈"
+  )
+)
+
+passions %>%
+  kable(caption = "Table: Professional Aspirations and Motivations 💓",
+        col.names = c("Student", "Career Goal", "Motivation", "Focus Area")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#FF6B9D") %>%
+  column_spec(1, bold = TRUE, background = "#FFF5E6", color = "#FF6B9D") %>%
+  column_spec(2:4, background = "#FFFACD")
+```
+
+# 👥 Meet Our Study Group!
+
+> *"Five students, five career paths, one collaborative approach to academic success! 💕"*
+
+## Student Profiles
+
+```{r student-profiles}
+# Create our study group data
+friends <- data.frame(
+  Student_ID = c("HS2021-001", "HS2021-002", "HS2021-003", "HS2021-004", "HS2021-005"),
+  Name = c("Sakura Tanaka", "Amara Okafor", "Diego Martinez", "Mei Lin Chen", "Siriporn Patel"),
+  Age = c(21, 22, 21, 20, 22),
+  Country = c("🇯🇵 Japan", "🇳🇬 Nigeria", "🇲🇽 Mexico", "🇨🇳 China", "🇹🇭 Thailand"),
+  Program = c("Nursing", "Public Health", "Nursing", "Medical Lab Tech", "Public Health"),
+  Year_Started = c(2021, 2021, 2021, 2021, 2021),
+  Current_Year = c("Junior", "Junior", "Junior", "Junior", "Junior"),
+  Current_GPA = c(3.78, 3.85, 3.65, 3.92, 3.71),
+  Notable_Skill = c(
+    "Clinical communication ☕",
+    "Health policy analysis 📝",
+    "Emergency response 🚑",
+    "Laboratory techniques 🔬",
+    "Community outreach 🧘"
+  )
+)
+
+datatable(friends, 
+          options = list(
+            pageLength = 5,
+            scrollX = TRUE,
+            dom = 'tip'
+          ),
+          caption = "Table 1: Study Group Members - Class of 2025",
+          class = 'cell-border stripe',
+          rownames = FALSE) %>%
+  formatStyle(
+    'Current_GPA',
+    background = styleColorBar(friends$Current_GPA, '#FFD93D'),
+    backgroundSize = '100% 90%',
+    backgroundRepeat = 'no-repeat',
+    backgroundPosition = 'center'
+  )
+```
+
+## Study Group Statistics
+
+```{r quick-stats}
+group_stats <- data.frame(
+  Metric = c(
+    "Total Study Sessions",
+    "Study Hours Logged ☕",
+    "Intensive Study Sessions",
+    "Group Projects Completed",
+    "Average GPA",
+    "Countries Represented",
+    "Languages Spoken",
+    "Group Meals Shared 🍕"
+  ),
+  Count = c(
+    156,
+    892,
+    23,
+    18,
+    "3.78",
+    5,
+    8,
+    347
+  )
+)
+
+group_stats %>%
+  kable(caption = "Table 2: Study Group Activities Summary",
+        col.names = c("Activity Metric", "Count")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = FALSE,
+                position = "center") %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#FF6B9D") %>%
+  column_spec(1, bold = TRUE, width = "250px", background = "#FFF5E6") %>%
+  column_spec(2, width = "120px", background = "#FFFACD")
+```
+
+# 💖 Notable Study Group Experiences
+
+<div class="story-box">
+
+## 🌙 Intensive Study Session - Microbiology Final
+
+**Spring 2023**
+
+During preparation for our Microbiology final examination, our study group encountered difficulty with the concept of bacterial conjugation. We decided to create a physical demonstration of the process, which proved to be an effective learning technique. A campus facilities staff member observed our study method and provided refreshments. This collaborative approach resulted in strong performance on the examination for all group members.
+
+*Key Learning: Creative study methods can enhance comprehension and retention.*
+
+</div>
+
+<div class="story-box">
+
+## 🎉 Peer Recognition Initiative
+
+**Each Semester**
+
+Our study group maintains a tradition of acknowledging individual academic achievements. When a member reaches a personal academic milestone, the group convenes to discuss each person's contributions to our collective success. This practice reinforces our collaborative approach and promotes continued motivation.
+
+*Key Learning: Peer recognition strengthens group cohesion and individual motivation.*
+
+</div>
+
+<div class="story-box">
+
+## 🌈 Extended Study Retreat
+
+**Fall 2023**
+
+Prior to our Clinical Practice Fundamentals examination, we organized a weekend study retreat. This allowed for focused preparation while also providing opportunities for group bonding through shared meals representing our diverse cultural backgrounds. The experience balanced intensive study with stress management.
+
+*Key Learning: Comprehensive preparation includes both academic focus and wellness activities.*
+
+</div>
+
+# 📚 Shared Course History
+
+## Courses Completed Together
+
+```{r shared-courses}
+# Courses all five students took together
+shared_courses <- data.frame(
+  Semester = c(
+    "Fall 2021", "Fall 2021", "Spring 2022", "Spring 2022",
+    "Fall 2022", "Fall 2022", "Spring 2023", "Spring 2023",
+    "Fall 2023", "Fall 2023", "Spring 2024", "Spring 2024"
+  ),
+  Course_Code = c(
+    "HS101", "BIO121", "HS102", "CHEM131",
+    "HS201", "STAT200", "HS202", "MICRO240",
+    "HS301", "PHARM310", "HS302", "EPID320"
+  ),
+  Course_Name = c(
+    "Introduction to Health Sciences",
+    "Human Anatomy & Physiology I",
+    "Medical Terminology",
+    "Chemistry for Health Sciences",
+    "Pathophysiology",
+    "Biostatistics",
+    "Pharmacology Basics",
+    "Microbiology",
+    "Clinical Practice Fundamentals",
+    "Pharmacology Advanced",
+    "Health Research Methods",
+    "Epidemiology"
+  ),
+  Credits = c(3, 4, 3, 4, 4, 3, 3, 4, 4, 3, 3, 3),
+  Study_Group_Hours = c(45, 62, 38, 55, 58, 48, 42, 65, 52, 47, 40, 38)
+)
+
+datatable(shared_courses,
+          options = list(
+            pageLength = 12,
+            scrollX = TRUE,
+            dom = 'tip'
+          ),
+          caption = "Table 3: Shared Course History 💪",
+          class = 'cell-border stripe',
+          rownames = FALSE)
+```
+
+## Individual Course Performance
+
+```{r individual-grades}
+# Create grade data for each student in shared courses
+course_grades <- data.frame(
+  Student = rep(friends$Name, each = 12),
+  Course = rep(shared_courses$Course_Code, 5),
+  Semester = rep(shared_courses$Semester, 5),
+  Grade = c(
+    # Sakura's grades
+    "A-", "B+", "A", "A-", "A", "A-", "B+", "A", "A-", "A", "A", "A-",
+    # Amara's grades
+    "A", "A", "A-", "A", "A", "A", "A-", "A", "A", "A-", "A", "A",
+    # Diego's grades
+    "B+", "B", "A-", "B+", "A-", "B+", "B+", "A-", "A", "A-", "B+", "A-",
+    # Mei Lin's grades
+    "A", "A", "A", "A", "A", "A", "A-", "A", "A", "A", "A", "A",
+    # Siriporn's grades
+    "A-", "B+", "A", "A-", "A", "A-", "A", "A-", "A-", "A", "A-", "A"
+  ),
+  Numerical_Score = c(
+    # Sakura
+    88, 85, 92, 90, 93, 89, 87, 91, 90, 94, 92, 91,
+    # Amara
+    94, 93, 91, 95, 96, 94, 92, 95, 94, 93, 95, 96,
+    # Diego
+    85, 82, 88, 86, 89, 87, 86, 90, 91, 90, 88, 89,
+    # Mei Lin
+    97, 96, 95, 96, 98, 97, 94, 96, 97, 98, 96, 97,
+    # Siriporn
+    90, 87, 92, 91, 93, 90, 92, 91, 91, 93, 92, 94
+  )
+)
+
+datatable(course_grades,
+          options = list(
+            pageLength = 10,
+            scrollX = TRUE,
+            dom = 'ftp'
+          ),
+          caption = "Table 4: Individual Course Performance",
+          class = 'cell-border stripe',
+          rownames = FALSE,
+          filter = 'top')
+```
+
+# 📈 Academic Progress Analysis
+
+## GPA Trajectory Over Time
+
+```{r gpa-trends}
+# Semester-by-semester GPA for each student
+semester_gpa <- data.frame(
+  Semester = rep(c("Fall 2021", "Spring 2022", "Fall 2022", "Spring 2023", "Fall 2023", "Spring 2024"), 5),
+  Student = rep(friends$Name, each = 6),
+  GPA = c(
+    # Sakura
+    3.65, 3.70, 3.73, 3.75, 3.77, 3.78,
+    # Amara
+    3.78, 3.80, 3.82, 3.83, 3.84, 3.85,
+    # Diego
+    3.55, 3.58, 3.60, 3.62, 3.64, 3.65,
+    # Mei Lin
+    3.85, 3.88, 3.89, 3.90, 3.91, 3.92,
+    # Siriporn
+    3.62, 3.65, 3.67, 3.69, 3.70, 3.71
+  ),
+  Credits_Completed = rep(c(15, 30, 45, 60, 75, 90), 5)
+)
+
+# Order semesters chronologically
+semester_order <- c("Fall 2021", "Spring 2022", "Fall 2022", "Spring 2023", "Fall 2023", "Spring 2024")
+semester_gpa$Semester <- factor(semester_gpa$Semester, levels = semester_order)
+
+plot_ly(semester_gpa, x = ~Semester, y = ~GPA, color = ~Student, 
+        type = 'scatter', mode = 'lines+markers',
+        colors = c("#FF6B9D", "#FFD93D", "#FF8C42", "#FFA07A", "#FFB6C1"),
+        marker = list(size = 10),
+        line = list(width = 3)) %>%
+  layout(title = "📊 GPA Progression: Fall 2021 - Spring 2024",
+         xaxis = list(title = "Semester", categoryorder = "array", 
+                     categoryarray = semester_order),
+         yaxis = list(title = "Cumulative GPA", range = c(3.5, 4.0)),
+         hovermode = "closest",
+         legend = list(orientation = 'h', y = -0.2))
+```
+
+## Course Performance Comparison
+
+```{r course-comparison}
+# Average scores by course
+course_avg <- course_grades %>%
+  group_by(Course, Semester) %>%
+  summarise(
+    Avg_Score = round(mean(Numerical_Score), 1),
+    Highest = max(Numerical_Score),
+    Lowest = min(Numerical_Score)
+  )
+
+plot_ly(course_avg, x = ~Course, y = ~Avg_Score, type = 'bar',
+        marker = list(color = "#FFD93D"),
+        text = ~paste("Avg:", Avg_Score, "<br>Range:", Lowest, "-", Highest),
+        hoverinfo = 'text') %>%
+  layout(title = "📚 Average Study Group Performance by Course",
+         xaxis = list(title = "Course Code"),
+         yaxis = list(title = "Average Score", range = c(75, 100)))
+```
+
+## Performance by Subject Area
+
+```{r performance-radar}
+# Calculate average by subject area for each student
+subject_performance <- course_grades %>%
+  mutate(Subject = case_when(
+    Course %in% c("HS101", "HS102", "HS201", "HS202", "HS301", "HS302") ~ "Core Health Sciences",
+    Course %in% c("BIO121", "MICRO240") ~ "Biological Sciences",
+    Course %in% c("CHEM131", "PHARM310") ~ "Chemistry & Pharmacology",
+    Course %in% c("STAT200", "EPID320") ~ "Statistics & Research"
+  )) %>%
+  group_by(Student, Subject) %>%
+  summarise(Avg_Score = round(mean(Numerical_Score), 1))
+
+plot_ly(subject_performance, x = ~Subject, y = ~Avg_Score, color = ~Student, type = 'bar',
+        colors = c("#FF6B9D", "#FFD93D", "#FF8C42", "#FFA07A", "#FFB6C1")) %>%
+  layout(title = "🎯 Performance by Subject Area",
+         xaxis = list(title = ""),
+         yaxis = list(title = "Average Score"),
+         barmode = 'group',
+         legend = list(orientation = 'h', y = -0.3))
+```
+
+# 🏆 Academic Achievements & Financial Aid
+
+## Scholarships and Awards Received
+
+```{r scholarships}
+scholarships <- data.frame(
+  Student = c(
+    "Sakura Tanaka", "Sakura Tanaka",
+    "Amara Okafor", "Amara Okafor", "Amara Okafor",
+    "Diego Martinez", "Diego Martinez",
+    "Mei Lin Chen", "Mei Lin Chen", "Mei Lin Chen",
+    "Siriporn Patel", "Siriporn Patel"
+  ),
+  Scholarship_Name = c(
+    "International Student Merit Award",
+    "Nursing Excellence Scholarship",
+    "Dean's List Scholarship",
+    "Public Health Leadership Award",
+    "Community Service Grant",
+    "First Generation Scholar Award",
+    "Hispanic Heritage Scholarship",
+    "Presidential Scholarship",
+    "STEM Excellence Award",
+    "Research Assistant Stipend",
+    "Women in STEM Grant",
+    "Cultural Diversity Scholarship"
+  ),
+  Amount = c(
+    5000, 3000,
+    4000, 2500, 1500,
+    4500, 2000,
+    8000, 3500, 2000,
+    3000, 2500
+  ),
+  Year_Awarded = c(
+    2022, 2023,
+    2022, 2023, 2023,
+    2022, 2023,
+    2021, 2022, 2023,
+    2022, 2023
+  )
+)
+
+datatable(scholarships,
+          options = list(
+            pageLength = 12,
+            scrollX = TRUE,
+            dom = 'tip'
+          ),
+          caption = "Table 5: Scholarships and Awards Received 🎓💰",
+          class = 'cell-border stripe',
+          rownames = FALSE) %>%
+  formatCurrency('Amount', '$', digits = 0)
+```
+
+## Total Financial Aid by Student
+
+```{r scholarship-totals}
+scholarship_totals <- scholarships %>%
+  group_by(Student) %>%
+  summarise(
+    Total_Scholarships = n(),
+    Total_Amount = sum(Amount)
+  ) %>%
+  arrange(desc(Total_Amount))
+
+plot_ly(scholarship_totals, x = ~Student, y = ~Total_Amount, type = 'bar',
+        marker = list(color = c("#FF6B9D", "#FFD93D", "#FF8C42", "#FFA07A", "#FFB6C1")),
+        text = ~paste("$", format(Total_Amount, big.mark=","), "<br>", Total_Scholarships, "scholarships"),
+        textposition = 'outside') %>%
+  layout(title = "💰 Total Scholarship Funding by Student",
+         xaxis = list(title = ""),
+         yaxis = list(title = "Total Amount ($)"))
+```
+
+## Financial Aid Timeline
+
+```{r awards-timeline}
+awards_summary <- scholarships %>%
+  group_by(Student, Year_Awarded) %>%
+  summarise(Count = n(), Total = sum(Amount))
+
+plot_ly(awards_summary, x = ~Year_Awarded, y = ~Total, color = ~Student, type = 'scatter',
+        mode = 'lines+markers',
+        colors = c("#FF6B9D", "#FFD93D", "#FF8C42", "#FFA07A", "#FFB6C1"),
+        marker = list(size = ~Count * 5),
+        text = ~paste(Student, "<br>", Count, "scholarships<br>$", format(Total, big.mark=",")),
+        hoverinfo = 'text') %>%
+  layout(title = "📅 Scholarship Awards Timeline",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Total Amount ($)"))
+```
+
+# 📊 Study Habits Analysis
+
+## Study Hours by Course
+
+```{r study-hours}
+plot_ly(shared_courses, x = ~Course_Name, y = ~Study_Group_Hours, type = 'bar',
+        marker = list(color = "#FF8C42")) %>%
+  layout(title = "⏰ Collaborative Study Hours by Course",
+         xaxis = list(title = "", tickangle = -45),
+         yaxis = list(title = "Total Study Hours"),
+         margin = list(b = 150))
+```
+
+## Study Time and Performance Correlation
+
+```{r study-correlation}
+# Calculate average score per course
+course_performance <- course_grades %>%
+  group_by(Course) %>%
+  summarise(Avg_Score = mean(Numerical_Score))
+
+# Merge with study hours
+study_analysis <- shared_courses %>%
+  select(Course_Code, Course_Name, Study_Group_Hours) %>%
+  left_join(course_performance, by = c("Course_Code" = "Course"))
+
+plot_ly(study_analysis, x = ~Study_Group_Hours, y = ~Avg_Score, type = 'scatter', mode = 'markers',
+        marker = list(size = 15, color = "#FFD93D", opacity = 0.7),
+        text = ~paste("<b>", Course_Name, "</b><br>",
+                     "Study Hours:", Study_Group_Hours, "<br>",
+                     "Avg Score:", round(Avg_Score, 1)),
+        hoverinfo = 'text') %>%
+  layout(title = "📖 Relationship Between Study Time and Performance",
+         xaxis = list(title = "Group Study Hours"),
+         yaxis = list(title = "Average Group Score"))
+```
+
+# 🌟 Academic Highlights
+
+## Individual Performance Summary
+
+```{r highlights}
+highlights <- data.frame(
+  Student = friends$Name,
+  Best_Course = c(
+    "Microbiology (96)",
+    "Epidemiology (96)",
+    "Clinical Practice (91)",
+    "Pathophysiology (98)",
+    "Epidemiology (94)"
+  ),
+  Improvement = c(
+    "+13 points (BIO→MICRO)",
+    "+2 points consistent growth",
+    "+9 points (BIO→CLINICAL)",
+    "+2 points sustained excellence",
+    "+7 points (CHEM→EPID)"
+  ),
+  Notable_Achievement = c(
+    "Microbiology examination success 🌙",
+    "Group research presentation 📊",
+    "Clinical rotation initiation 🏥",
+    "Laboratory practical excellence ⭐",
+    "Extended study session effectiveness ☕"
+  )
+)
+
+highlights %>%
+  kable(caption = "Table 6: Individual Academic Achievements 🎉",
+        col.names = c("Student", "Highest Performance", "Greatest Improvement", "Notable Achievement")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = TRUE) %>%
+  row_spec(0, bold = TRUE, color = "white", background = "#FF6B9D") %>%
+  column_spec(1, bold = TRUE, background = "#FFF5E6", color = "#FF6B9D")
+```
+
+## Grade Distribution Analysis
+
+```{r grade-distribution}
+grade_counts <- course_grades %>%
+  count(Student, Grade) %>%
+  group_by(Student) %>%
+  mutate(Percentage = round(n / sum(n) * 100, 1))
+
+plot_ly(grade_counts, x = ~Student, y = ~n, color = ~Grade, type = 'bar',
+        colors = c("#FF6B9D", "#FFD93D", "#FF8C42", "#FFA07A"),
+        text = ~paste(Grade, ":", n, "courses (", Percentage, "%)"),
+        hoverinfo = 'text') %>%
+  layout(title = "📊 Grade Distribution by Student",
+         xaxis = list(title = ""),
+         yaxis = list(title = "Number of Courses"),
+         barmode = 'stack')
+```
+
+# 💝 Future Academic Plans
+
+<div class="story-box">
+
+## 🎓 Senior Year Objectives
+
+As we approach our final academic year, the study group has identified several key objectives for successful program completion:
+
+**Academic Goals:**
+
+- Complete comprehensive examinations successfully
+- Fulfill clinical rotation and practicum requirements
+- Submit applications for graduate programs and professional positions
+- Maintain consistent study group meetings (with continued peer support)
+- Support each other through program completion challenges
+
+**Post-Graduation Plans:**
+
+The study group has established a commitment to maintain professional connections following graduation. We plan to convene annually to discuss career development, share professional experiences, and continue our collaborative approach to professional growth.
+
+</div>
+
+---
+
+<center>
+*Developed collaboratively by five Health Sciences students*
+
+**Class of 2025 | Health Sciences Program | Professional Study Group**
+</center>
