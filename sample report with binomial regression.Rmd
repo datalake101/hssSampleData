@@ -1,8 +1,10 @@
 ---
-title: "Relationship between lifestyle behavious and arthritis among women aged 15 years and above in Mali: a cross-sectional study"
+title: "Relationship between lifestyle behaviours and arthritis among women aged 15 years and above in Mali: a cross-sectional study"
 author: "FSS 2025"
 date: "`r Sys.Date()`"
-output: word_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 #setup the environment
